@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.MapAppPage"
+    xmlns:i18n="clr-namespace:appTurismoIqq.Helpers;assembly=appTurismoIqq"
+             Title="{i18n:Translate Mapa}"
+             BindingContext="{Binding Main,Source={StaticResource localizador}}">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Mapa}">
+            <maps:Map Grid.Row="1" x:Name="map"
+                      InitialCameraUpdate="-20.247508, -70.133661, 13, 30, 60"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand" />
+
+            <Button x:Name="traceRouteButton" Text="{i18n:Translate TrazarRuta}" FontSize="Small" BackgroundColor="#2098F0" HorizontalOptions="Center"  Command="{Binding TraceRouteCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

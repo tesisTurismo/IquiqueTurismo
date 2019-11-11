@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.EntidadesPage"
+            BindingContext="{Binding Main,Source={StaticResource localizador}}"
+    Title="Entidades">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Entidades}" Padding="5">
+            <SearchBar
+               HeightRequest="35"
+                WidthRequest="35"
+                Placeholder="Buscar " 
+                Text="{Binding Filtro}" 
+                SearchCommand="{Binding SearchCommand}">
+
+            </SearchBar>
+
+            <ListView ItemsSource="{Binding Listaentidades}"
+                      HasUnevenRows="True"
+                      IsRefreshing="{Binding IsRefreshing}" 
+                      RefreshCommand="{Binding RefreshCommand}" 
+                      IsPullToRefreshEnabled="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  HasShadow="true" Margin="7">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DetalleEntidadCommand}"/>
+                                    </Grid.GestureRecognizers>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                       
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Image 
+                                    Grid.Column="0"
+
+                                    Source="{Binding fotoApp}" 
+                                    WidthRequest="100"
+                                    HeightRequest="100">
+
+                                    </Image>
+
+
+
+
+                                    <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
+                                        <Label  
+                                       FontAttributes="Bold" 
+                                        TextColor="Black"
+                                       Text="{Binding nombre}"
+                                       FontSize="18">
+
+
+                                        </Label>
+                                       
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1"  Grid.Row="1" VerticalOptions="Center">
+                                        <Label  
+                                        
+                                        TextColor="Black"
+                                       Text="vistas:"
+                                       FontSize="Small">
+
+
+                                        </Label>
+                                        <Label  
+                                      
+                                        TextColor="Black"
+                                       Text="{Binding vistas}"
+                                       FontSize="Small">
+
+
+                                        </Label>
+
+                                    </StackLayout>
+
+
+                                    <Image Grid.Column="2" Source="siguiente"
+                                       VerticalOptions="Center" WidthRequest="60"
+                                    HeightRequest="60">
+
+                                    </Image>
+
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

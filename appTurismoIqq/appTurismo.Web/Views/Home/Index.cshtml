@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.Raw(TempData["msg"])
+<center>
+    <form method="post">
+        <div id="header">
+            <h2>Iniciar Sesión</h2>
+        </div>
+
+        <input type="text" placeholder="&#128272; Usuario" name="user" class="form-control"><br />
+        <input type="password" placeholder="&#128273; Contraseña" name="pass" class="form-control"><br />
+        <input type="submit" value="Ingresar" class="btn btn-primary">
+
+
+    </form>
+</center>

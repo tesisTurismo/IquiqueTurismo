@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.RecuperarClavePage"
+             BindingContext="{Binding Main,Source={StaticResource localizador}}"
+    Title="Recuperación de contraseña">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding Recuperacion}">
+            <StackLayout Padding="60">
+                
+                <Image HeightRequest="150"
+                       Source="email">
+                    </Image>
+                    <Grid Margin="10,0"
+                      VerticalOptions="CenterAndExpand">
+                    
+                   <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        FontSize="Large" TextColor="Black"
+                        Text="Ingrese Email"
+                        VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                </Label>
+                <Entry
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        
+                        Text="{Binding Email}"
+                        Placeholder="Ingrese su Email" HorizontalOptions="StartAndExpand" VerticalOptions="Center"
+                        >
+                </Entry>
+
+                    <ActivityIndicator
+                           IsRunning="{Binding IsRunning}"
+                            VerticalOptions="CenterAndExpand">
+                    </ActivityIndicator>
+                </Grid>
+                <!-- <Button Text="Enviar" BorderRadius="23"  TextColor="White" Command="{Binding EnviarCommand}"></Button> -->
+                
+
+                <Button
+                                BackgroundColor="#2098F0"
+                                BorderRadius="23"
+                                Command="{Binding EnviarCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="FillAndExpand"
+                                IsEnabled="{Binding IsEnabled}"
+                                FontSize="Medium" Text="Enviar"
+                                TextColor="White">
+                </Button>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

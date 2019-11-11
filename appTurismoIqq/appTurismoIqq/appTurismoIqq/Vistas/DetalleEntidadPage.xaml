@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.DetalleEntidadPage"
+             BindingContext="{Binding Main,Source={StaticResource localizador}}"
+             Title="Detalle Entidad" >
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding detalleEntidad}" Padding="5" >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding EjecutarCantidadVistas}" ></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+            <Label FontAttributes="Bold" Text="{Binding NombreEntidad}" FontSize="Large" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"></Label>
+            <Image Source="{Binding ImageSource}" WidthRequest="200" ></Image>
+            <Label Text="{Binding DescripcionEntidad}" FontSize="Medium" TextColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ></Label>
+            <Label Text="Página Web" FontSize="Medium" TextColor="Black" VerticalOptions="FillAndExpand" FontAttributes="Bold"></Label>
+            <Label Text="{Binding PagWebEntidad}" FontSize="Medium" TextColor="Black" VerticalOptions="FillAndExpand" ></Label>
+
+
+            <Label Text="Ubicaciones" FontAttributes="Bold" FontSize="Medium" TextColor="Black" ></Label>
+
+            <ListView
+                
+                HasUnevenRows="True"
+                IsRefreshing="{Binding IsRefreshing}"
+                IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding Direcciones}"
+                RefreshCommand="{Binding RefreshCommand}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  Margin="5">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DetalleDireccionCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        
+
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                       
+
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout Grid.Column="0"   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                        <Label  
+                                       FontAttributes="Bold" 
+                                        TextColor="Black"
+                                       Text="{Binding direccion}"
+                                       FontSize="18">
+
+
+                                        </Label>
+                                        <Button 
+                                    
+                                        Text="Detalle" BackgroundColor="#FF4089"  FontSize="Small" WidthRequest="100" HeightRequest="40" VerticalOptions="CenterAndExpand"></Button>
+
+
+                                    </StackLayout>
+
+
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

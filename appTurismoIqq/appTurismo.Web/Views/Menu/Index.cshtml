@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("cerrarsesion", "Menu", FormMethod.Get, new { enctype = "multipart/form-data" }))
+{
+
+    <br />
+    <a href="~/Menu/cerrarsesion" class="btn btn-danger navbar-right">Cerrar Sesión</a>
+
+}
+
+
+<form>
+    <center>
+
+        <br /><br /><br /><br />  <h1> Administración de aplicación turística</h1> <br />
+
+      <ul class="list-group">
+        <li class="list-group-item"> <a href="/Entidades/Index" class="btn btn-primary btn-block">Administrar Entidades</a></li>
+        <li class="list-group-item"> <a href="/Categoria/Index" class="btn btn-primary btn-block">Administrar Categoria</a></li>
+        <li class="list-group-item"> <a href="/Direccion/Index" class="btn btn-primary btn-block">Administrar Direcciones</a></li>
+        <li class="list-group-item"> <a href="/Usuario/Index" class="btn btn-primary btn-block">Listado de Usuarios</a></li>
+      </ul>
+    </center>
+
+</form>

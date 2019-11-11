@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.CategoriasPage" BindingContext="{Binding Main,Source={StaticResource localizador}}"
+            
+    Title="Categorias" 
+            >
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Categorias}" Padding="5">
+
+            <ListView ItemsSource="{Binding ListaCategorias}"
+                      HasUnevenRows="True"
+                      IsRefreshing="{Binding IsRefreshing}" 
+                      RefreshCommand="{Binding RefreshCommand}" 
+                      IsPullToRefreshEnabled="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  HasShadow="true" Margin="7">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CategoriaCommand}"/>
+                                    </Grid.GestureRecognizers>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image 
+                                    Grid.Column="0"
+
+                                    Source="{Binding fotoCategoriaApp}" 
+                                    WidthRequest="100"
+                                    HeightRequest="100">
+
+                                    </Image>
+
+
+
+
+
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label  
+                                      
+                                       FontAttributes="Bold" 
+                                       FontSize="Medium" TextColor="Black"
+                                       Text="{Binding nombre}"
+                                      >
+
+
+                                        </Label>
+
+
+                                        
+
+
+
+                                    </StackLayout>
+                                  
+
+
+
+
+
+                                </Grid>
+                                
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <Button
+                                BackgroundColor="#2098F0"
+                                BorderRadius="23"
+                                Command="{Binding CerrarCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="FillAndExpand"
+                                IsEnabled="{Binding IsEnabled}"
+                                FontSize="Medium" Text="Cerrar Sesión"
+                                TextColor="White">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

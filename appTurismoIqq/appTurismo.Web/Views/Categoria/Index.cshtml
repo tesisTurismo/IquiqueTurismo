@@ -1,0 +1,51 @@
+﻿@model IEnumerable<appTurismoIqq.Modelo.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Categorias</h2>
+
+<p>
+    @Html.ActionLink("Nueva Categoria", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fotoCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreEng)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @if (!string.IsNullOrEmpty(item.fotoCategoria))
+            {
+                <img src="@Url.Content(item.fotoCategoria)" alt="Image" style="width:100px;height:150px;max-width:100%;height:auto;" />
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreEng)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id })  
+
+          
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

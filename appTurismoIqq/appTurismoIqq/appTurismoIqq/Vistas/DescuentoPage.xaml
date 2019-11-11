@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.DescuentoPage"
+             Title="Descuento">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Escanee Código de descuento!"  FontSize="Large" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            <Image HeightRequest="200"
+                       Source="qrdescuento"
+                   VerticalOptions="Center">
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

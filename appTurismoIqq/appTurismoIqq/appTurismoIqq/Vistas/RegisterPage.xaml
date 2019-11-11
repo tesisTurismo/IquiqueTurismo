@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appTurismoIqq.Vistas.RegisterPage"
+             BindingContext="{Binding Main,Source={StaticResource localizador}}"
+             Title="Registro de usuario">
+    <ContentPage.Content>
+        <ScrollView
+           BindingContext="{Binding Registros}">
+            <StackLayout Padding="20">
+
+                <Image
+                    Source="usuario"
+                    Aspect="AspectFill"
+                    WidthRequest="200"
+                    HeightRequest="200">
+                    
+                </Image>
+                <Label
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                   >
+                </Label>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Nombre" 
+                        VerticalOptions="Center"></Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="{Binding Nombre}"
+                        Placeholder="Ingrese nombre"></Entry>
+
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Apellido"
+                        VerticalOptions="Center"></Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="{Binding Apellido}"
+                        Placeholder="Ingrese apellido">
+                    </Entry>
+
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Contraseña"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        IsPassword="True"
+                        Text="{Binding Contraseña}"
+                        Placeholder="Ingrese contraseña">
+                    </Entry>
+
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Confirmar"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        IsPassword="True"
+                        Text="{Binding ConfirmarContraseña}"
+                        Placeholder="Confirme contraseña">
+                    </Entry>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Pais de origen"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="4"                    
+                        Text="{Binding PaisOrigen}"
+                        Placeholder="Ingrese país">
+                    </Entry>
+
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Ciudad de origen"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        Text="{Binding CiudadOrigen}"
+                        Placeholder="Ingrese ciudad">
+                    </Entry>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="6"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Nacionalidad"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="6"
+                        Text="{Binding Nacionalidad}"
+                        Placeholder="Ingrese nacionalidad">
+                    </Entry>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="7"
+                        FontSize="Medium" TextColor="Black"
+                        Text="Email"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Column="1"
+                        Grid.Row="7"
+                        Text="{Binding Email}"
+                        Placeholder="Ingrese Email">
+                    </Entry>
+                </Grid>
+
+
+
+
+
+
+
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+
+                <Button
+                    BackgroundColor="#2098F0"
+                    BorderRadius="23"
+                    Command="{Binding SaveCommand}"
+                    HeightRequest="46"
+                    IsEnabled="{Binding IsEnabled}"
+                    Text="Registrar"
+                    TextColor="White">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

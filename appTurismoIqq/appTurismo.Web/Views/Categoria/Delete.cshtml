@@ -1,0 +1,56 @@
+﻿@model appTurismoIqq.Modelo.Categoria
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Registro</h2>
+
+<h3>¿Esta seguro que desea eliminar este registro?</h3>
+<div>
+    <h4>Detalle de registro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fotoCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fotoCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreEng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreEng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fotoCategoriaApp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fotoCategoriaApp)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

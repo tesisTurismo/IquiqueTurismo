@@ -1,0 +1,62 @@
+﻿@model IEnumerable<appTurismoIqq.Modelo.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Usuarios</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Apellido")
+        </th>
+        <!--<th>
+        Html.DisplayNameFor(model => model.passwordU)
+    </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.paisOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ciudadOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nacionalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidoU)
+        </td>
+        <!-- <td>
+         Html.DisplayFor(modelItem => item.passwordU)
+     </td>-->
+        <td>
+            @Html.DisplayFor(modelItem => item.paisOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ciudadOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nacionalidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td></td>
+    </tr>
+}
+
+</table>
